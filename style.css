@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+      padding: 20px;
+        font-family: Arial, sans-serif;
+          background: #fff3b0;
+            color: #222;
+              text-align: center;
+              }
+
+              h1 {
+                font-size: 45px;
+                  color: #e67e00;
+                    margin-top: 30px;
+                    }
+
+                    h2 {
+                      background: #000;
+                        color: #fff;
+                          padding: 12px;
+                            border-radius: 10px;
+                              margin-top: 30px;
+                              }
+
+                              h3 {
+                                color: #e67e00;
+                                }
+
+                                p {
+                                  font-size: 18px;
+                                    line-height: 1.8;
+                                    }
+
+                                    .btn {
+                                      display: inline-block;
+                                        background: #000;
+                                          color: white;
+                                            padding: 14px 30px;
+                                              border-radius: 30px;
+                                                text-decoration: none;
+                                                  font-size: 1                               }
+
+                                                  hr {
+                                                    margin: 30px 
+                                                      border: 1px solid #e67e00;
+                                                                           }j
+}.hero {
+  background: #000;
+    color: white;
+      padding: 40px 20px;
+        border-radius: 20px;
+          margin-bottom: 30px;
+          }
+
+          .hero h1 {
+            color: #ffb300;
+              font-size: 50px;
+              }
+
+              .hero h2 {
+                background: none;
+                  color: Red
+              
+                  ;
+                  
+                  .menu-card {
+                      background: white;
+                        margin: 20px auto;
+                          padding: 20px;
+                            border-radius: 20px;
+                              max-width: 350px;
+                                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                                }
+
+                                .menu-card h3 {
+                                  color: #e67e00;
+                                    font-size: 25px;
+                                    
+                                    .menu-card p {
+                                      margin: 8px;
+                                      }
+
+                  }.menu-card {
+                      background: white;
+                        margin: 25px auto;
+                          padding: 25px;
+                            border-radius: 20px;
+                              max-width: 500px;
+                                box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+                                }
+
+                                .menu-card h2 {
+                                  background: #000;
+                                    color: #ffb300;
+                                      padding: 15px;
+                                        border-radius: 15px;
+                                        }
+
+                                        .menu-card h3 {
+                                          color: #e67e00;
+                                            margin-top: 25px;
+                                            }
+
+                                            .menu-card p {
+                                              display: inline-block;
+                                                background: #fff3cd;
+                                                  padding: 8px 12px;
+                                                    margin: 6px;
+                                                      border-radius: 20px;
+                                                        font-size: 16px;
+                                                        }
+                                                        
+                  }
