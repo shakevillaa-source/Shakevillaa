@@ -3,54 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Coding Cafe | Code. Sip. Repeat.</title>
+    <title>Shake Villa - Digital Menu</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Icons ke liye FontAwesome Link -->
+    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header class="navbar">
-        <div class="logo">&lt;Coding_Cafe&sol;&gt;</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#menu">Menu</a>
-            <a href="#events">Events</a>
-            <a href="#booking" class="btn-nav">Book a Desk</a>
+    <div class="app-container">
+        
+        <!-- Header Banner Section -->
+        <header class="header-banner">
+            <div class="lang-switch">
+                <span>हिंदी</span> | <span class="active">EN</span>
+            </div>
+            <div class="brand-info">
+                <h1>Shake Villa 🍹</h1>
+                <!-- Google Maps Direction Link -->
+                <a href="https://google.com" target="_blank" class="address-link">
+                    <i class="fa-solid fa-location-dot"></i> Shop No. 5, Bilal Masjid, Ravli Road, Muradnagar
+                </a>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="menu-nav">
+            <a href="#home" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="#menu" class="nav-item"><i class="fa-solid fa-utensils"></i> Menu</a>
         </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Where <span class="highlight">Coffee</span> Meets <span class="code-text">Code</span>.</h1>
-            <p>High-speed internet, premium coffee, and a community of developers.</p>
-            <a href="#booking" class="btn-primary">Reserve Your Workspace</a>
+        <!-- Search Bar -->
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search your favorite shake...">
         </div>
-    </section>
 
-    <!-- Booking Section -->
-    <section id="booking" class="booking-section">
-        <h2>Reserve Your Coding Desk</h2>
-        <form class="booking-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Enter your name" required>
+        <!-- Contact Quick Actions -->
+        <div class="quick-contact-bar">
+            <a href="tel:+919808080686" class="contact-card">
+                <i class="fa-solid fa-phone"></i>
+                <span>Call Us</span>
+            </a>
+            <a href="mailto:shakevillaa@gmail.com" class="contact-card">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email Us</span>
+            </a>
+        </div>
+
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <h2>Explore Our Menu</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="https://unsplash.com" alt="Special Milkshakes">
+                    <h3>Special Milkshakes</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://unsplash.com" alt="Thick Shakes">
+                    <h3>Thick Shakes</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://unsplash.com" alt="Cold Coffees">
+                    <h3>Cold Coffees</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://unsplash.com" alt="Quick Snacks">
+                    <h3>Quick Snacks</h3>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="date">Select Date</label>
-                <input type="date" id="date" required>
-            </div>
-            <div class="form-group">
-                <label for="slot">Time Slot</label>
-                <select id="slot">
-                    <option>Morning (8 AM - 1 PM)</option>
-                    <option>Evening (1 PM - 6 PM)</option>
-                    <option>Night Owl (6 PM - 11 PM)</option>
-                </select>
-            </div>
-            <button type="submit" class="btn-submit">Confirm Booking</button>
-        </form>
-    </section>
+        </section>
+
+        <!-- Social Connect Sticky Footer -->
+        <footer class="social-footer">
+            <a href="https://wa.me" target="_blank" class="social-btn whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-btn instagram">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+        </footer>
+
+    </div>
 
 </body>
 </html>
