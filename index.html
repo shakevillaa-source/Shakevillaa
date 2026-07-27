@@ -298,6 +298,61 @@ loading="lazy">
 
 </section>
 </body>
+  <!-- ===== PART 8 : Premium Hero Animation ===== -->
+
+<style>
+.hero{
+background:linear-gradient(135deg,#ff9800,#ff5722);
+color:white;
+padding:80px 20px;
+text-align:center;
+border-radius:0 0 30px 30px;
+animation:heroFade 1.5s ease;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.hero .btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 30px;
+background:white;
+color:#ff5722;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+transition:.3s;
+}
+
+.hero .btn:hover{
+transform:scale(1.08);
+background:#fff3e0;
+}
+
+@keyframes heroFade{
+from{
+opacity:0;
+transform:translateY(-50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+
+<script>
+document.querySelectorAll("section").forEach(function(section){
+section.classList.add("fade-up");
+});
+</script>
   <!-- ===== PART 7 : Back to Top + Smooth Scroll ===== -->
 
 <button onclick="topFunction()" id="topBtn">⬆</button>
