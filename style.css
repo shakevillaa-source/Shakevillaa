@@ -1,96 +1,234 @@
-// Shake Villa Menu Data - Auto Image Generator Unsplash API ke sath
-const menuItems = [
-  // Left Column
-  { id: 1, name: "Butter Scotch", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 2, name: "Blueberry", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 3, name: "Strawberry", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 4, name: "Vanilla", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 5, name: "Litchi", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 6, name: "Mango", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 7, name: "Kiwi", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 8, name: "Green Apple", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 9, name: "Black Currant", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 10, name: "Banana", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 11, name: "Mixed Fruit", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 12, name: "Guava", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 13, name: "Pineapple", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 14, name: "Custard", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 15, name: "Choco Chips", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 16, name: "Kitkat", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 17, name: "Chocolate", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-
-  // Bottom Section
-  { id: 18, name: "Pista", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 19, name: "Badam", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 20, name: "Kaser Badam", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 21, name: "Kesar Syrup", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 22, name: "Rasmalai", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-  { id: 23, name: "Dubble Chocolate", category: "Thick Shake", priceSmall: "₹70", priceLarge: "₹90" },
-
-  // Right Column
-  { id: 24, name: "Dasheri Aam", category: "Thick Shake", priceSmall: "₹90", priceLarge: "₹110" },
-  { id: 25, name: "Crush Blueberry", category: "Thick Shake", priceSmall: "₹90", priceLarge: "₹110" },
-  { id: 26, name: "Caramel Salted", category: "Thick Shake", priceSmall: "₹90", priceLarge: "₹110" },
-  { id: 27, name: "English Toffee", category: "Thick Shake", priceSmall: "₹90", priceLarge: "₹110" },
-  { id: 28, name: "Belgian Dark Chocolate", category: "Thick Shake", priceSmall: "₹90", priceLarge: "₹110" },
-  { id: 29, name: "Tropical Trio", category: "Thick Shake", priceSmall: "₹90", priceLarge: "₹110" },
-  { id: 30, name: "Strawberry Swirl", category: "Thick Shake", priceSmall: "₹90", priceLarge: "₹110" },
-  { id: 31, name: "Rose Faluda Drizzle", category: "Thick Shake", priceSmall: "₹90", priceLarge: "₹110" },
-  { id: 32, name: "Masala Badam", category: "Thick Shake", priceSmall: "₹90", priceLarge: "₹110" },
-  { id: 33, name: "Dry Choco Brownie", category: "Thick Shake", priceSmall: "₹100", priceLarge: "₹120" },
-  { id: 34, name: "Peanut Nutella Brownie", category: "Thick Shake", priceSmall: "₹100", priceLarge: "₹120" },
-  { id: 35, name: "Redvelvet Cheese", category: "Thick Shake", priceSmall: "₹140", priceLarge: "₹120" },
-  { id: 36, name: "Kitkat Brownie", category: "Thick Shake", priceSmall: "₹140", priceLarge: "₹120" },
-  { id: 37, name: "Oreo Brownie", category: "Thick Shake", priceSmall: "₹140", priceLarge: "₹120" },
-  { id: 38, name: "Chocolate Brownie", category: "Thick Shake", priceSmall: "₹140", priceLarge: "₹120" },
-  { id: 39, name: "Mung Fali Brownie", category: "Thick Shake", priceSmall: "₹140", priceLarge: "₹120" },
-  { id: 40, name: "Cookie Caramel Brownie", category: "Thick Shake", priceSmall: "₹150", priceLarge: "₹170" },
-  { id: 41, name: "Shakevilla Premium", category: "Thick Shake", priceSmall: "₹160", priceLarge: "₹180" }
-];
-
-const container = document.getElementById('menu-container');
-
-function displayItems(items) {
-  if (!container) return;
-  
-  container.innerHTML = items.map(item => {
-    // Har item ke naam ke hisab se alag photo load karne ke liye dynamic link
-    const dynamicImg = `https://source.unsplash.com/400x300/?${encodeURIComponent(item.name + " milkshake")}`;
-    
-    return `
-      <div class="card">
-        <img src="${dynamicImg}" alt="${item.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400'" />
-        <div class="card-details">
-          <div class="card-title">${item.name}</div>
-          <div class="card-bottom">
-            <div class="price">
-              <span style="font-size:0.8rem; color:#ff4e50; font-weight:bold;">S:</span> ${item.priceSmall} | 
-              <span style="font-size:0.8rem; color:#ff4e50; font-weight:bold;">L:</span> ${item.priceLarge}
-            </div>
-            <button class="order-btn">Order</button>
-          </div>
-        </div>
-      </div>
-    `;
-  }).join('');
+/* Base Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-function filterCategory(cat) {
-  const buttons = document.querySelectorAll('.cat-btn');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  if (window.event && window.event.target) {
-    window.event.target.classList.add('active');
-  }
-
-  if (cat === 'all') {
-    displayItems(menuItems);
-  } else {
-    const filtered = menuItems.filter(item => item.category.toLowerCase() === cat.toLowerCase());
-    displayItems(filtered);
-  }
+body {
+    background-color: #f5f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-// Initial render
-document.addEventListener('DOMContentLoaded', () => {
-  displayItems(menuItems);
-});
+/* Smartphone Layout Container */
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    background-color: #ffffff;
+    min-height: 100vh;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    padding-bottom: 90px;
+}
+
+/* Header Banner Styling */
+.header-banner {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    padding: 35px 20px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    position: relative;
+}
+
+.lang-switch {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.lang-switch .active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.brand-info h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.address-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    display: block;
+}
+
+.address-link:hover {
+    text-decoration: underline;
+}
+
+/* Navigation Menu */
+.menu-nav {
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    margin: -18px 20px 0 20px;
+    padding: 8px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 25px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-item.active {
+    background-color: #ff4b2b;
+    color: white;
+}
+
+/* Search Bar Box */
+.search-box {
+    margin: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    color: #a0aec0;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 12px 12px 45px;
+    border: 1px solid #e2e8f0;
+    border-radius: 25px;
+    background-color: #f7fafc;
+    font-size: 0.95rem;
+    outline: none;
+    transition: 0.2s;
+}
+
+.search-box input:focus {
+    border-color: #ff4b2b;
+    background-color: #fff;
+}
+
+/* Quick Contact Quick Action Icons */
+.quick-contact-bar {
+    display: flex;
+    margin: 0 20px 20px 20px;
+    gap: 15px;
+}
+
+.contact-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    background: #f8fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.contact-card:hover {
+    background: #edf2f7;
+    color: #ff4b2b;
+}
+
+/* Category Grid Setup */
+.categories-section {
+    padding: 0 20px;
+}
+
+.categories-section h2 {
+    font-size: 1.2rem;
+    color: #2d3748;
+    margin-bottom: 12px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.category-card {
+    background: #fff;
+    border: 1px solid #f0f4f8;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+.category-card img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+}
+
+.category-card h3 {
+    font-size: 0.9rem;
+    color: #4a5568;
+    padding: 12px 8px;
+    font-weight: 600;
+}
+
+/* Bottom Sticky Footer Panel */
+.social-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 15px 20px;
+    background: #fff;
+    border-top: 1px solid #edf2f7;
+    gap: 12px;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.whatsapp { background-color: #25D366; }
+.instagram { background-color: #E1306C; }
