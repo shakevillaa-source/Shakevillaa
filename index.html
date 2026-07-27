@@ -222,10 +222,58 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Welcome message
-window.onload = function () {
-  console.log("Welcome to Sh🍹ke Villa!");
+window.onload = function () { console.log("Welcome to Sh🍹ke Villa!");
 };
 </script>
 
 </body>
+  <!-- Part 5 - Floating WhatsApp, Call & Footer -->
+
+<a href="https://wa.me/919808080686" class="whatsapp-btn" target="_blank">💬 Order on WhatsApp</a>
+
+<a href="tel:+919808080686" class="call-btn">📞 Call Now</a>
+
+<footer>
+  <h3>Shake Villa</h3>
+  <p>📍 Shop No. 5, Bilal Masjid, Ravli Road, Muradnagar</p>
+  <p>🕒 Open Daily: 10:00 AM – 11:00 PM</p>
+  <p>Follow us on Instagram: @shakevilla</p>
+  <p>© 2026 Shake Villa. All Rights Reserved.</p>
+</footer>
+
+<style>
+.whatsapp-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:#fff;
+padding:14px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+z-index:999;
+}
+
+.call-btn{
+position:fixed;
+bottom:80px;
+right:20px;
+background:#ff9800;
+color:#fff;
+padding:14px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+z-index:999;
+}
+
+footer{
+background:#111;
+color:#fff;
+text-align:center;
+padding:30px;
+margin-top:50px;
+}
+</style>
 </html>
