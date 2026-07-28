@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+b<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -188,3 +188,50 @@
 
 .whatsapp { background-color: #25D366; }
 .instagram { background-color: #E1306C; }
+.menu{
+padding:90px 0;
+background:#f8f8f8;
+}
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.menu-card{
+background:#fff;
+padding:30px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.menu-card:hover{
+transform:translateY(-8px);
+}
+
+.menu-card h3{
+font-size:24px;
+margin-bottom:15px;
+}
+
+.menu-card p{
+color:#666;
+margin-bottom:20px;
+}
+
+.menu-card a{
+display:inline-block;
+padding:10px 24px;
+background:#ff7a00;
+color:#fff;
+text-decoration:none;
+border-radius:30px;
+font-weight:600;
+}
+
+.menu-card a:hover{
+background:#e76600;
+}
