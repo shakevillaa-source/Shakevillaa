@@ -3,122 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sh🍹ke Villa Kiraoli - Order Fresh Mojito, Shakes & Mocktail Online">
-<title>Sh🍹ke Villa - Order Online</title>
+<meta name="description" content="Shake Villa Muradnagar - 100+ Flavors of Mojito, Shakes, Coffee & Coolers. Order on WhatsApp 9808080686">
+<title>Shake Villa Muradnagar - Full Menu</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
   body{background:#f7f7f7;color:#333}
   
-  header{
-    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1200') center/cover;
-    color:#fff;text-align:center;padding:60px 20px
-  }
-  header h1{font-size:3rem;font-weight:700}
-  header p{font-size:1.2rem;margin-top:10px}
+  nav{position:sticky;top:0;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.1);padding:15px 20px;z-index:100;display:flex;justify-content:space-between;align-items:center}
+  nav .logo{font-size:1.8rem;font-weight:700;color:#27ae60}
+  nav .nav-links a{margin-left:20px;text-decoration:none;color:#333;font-weight:600}
 
-  .container{max-width:1100px;margin:30px auto;padding:0 20px}
-  .section-title{text-align:center;font-size:2rem;margin-bottom:30px;color:#27ae60}
+  header{
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1200') center/cover;
+    color:#fff;text-align:center;padding:100px 20px
+  }
+  header h1{font-size:3.5rem;font-weight:700}
+  header p{font-size:1.3rem;margin:15px 0 30px}
+  .btn{ background:#25D366;color:#fff;padding:15px 35px;border-radius:50px;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-block}
+
+  .container{max-width:1300px;margin:50px auto;padding:0 20px}
+  .section-title{text-align:center;font-size:2.2rem;margin-bottom:10px;color:#27ae60}
+  .section-sub{text-align:center;color:#777;margin-bottom:40px}
+
+  .filters{text-align:center;margin-bottom:30px;position:sticky;top:70px;background:#f7f7f7;padding:15px 0;z-index:99}
+  .filter-btn{
+    background:#fff;border:2px solid #27ae60;color:#27ae60;padding:10px 20px;margin:5px;border-radius:25px;cursor:pointer;font-weight:600;transition:0.3s;font-size:0.9rem
+  }
+  .filter-btn.active, .filter-btn:hover{background:#27ae60;color:#fff}
 
   .menu-grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px
   }
   .menu-card{
-    background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.1);transition:0.3s
+    background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);transition:0.3s;display:flex;flex-direction:column
   }
   .menu-card:hover{transform:translateY(-5px)}
-  .menu-card img{width:100%;height:200px;object-fit:cover}
-  .menu-info{padding:15px}
-  .menu-info h3{font-size:1.3rem;margin-bottom:5px}
-  .menu-info p{color:#666;font-size:0.9rem;margin-bottom:10px}
-  .price-row{display:flex;justify-content:space-between;align-items:center}
-  .price{font-weight:700;color:#27ae60;font-size:1.2rem}
+  .menu-info{padding:18px;flex-grow:1}
+  .menu-info h3{font-size:1.2rem;margin-bottom:8px;color:#222}
+  .price-row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px}
+  .price{font-weight:700;color:#27ae60;font-size:1.1rem}
   .order-btn{
-    background:#25D366;color:#fff;padding:8px 15px;border-radius:25px;text-decoration:none;font-size:0.9rem;font-weight:600
+    background:#25D366;color:#fff;padding:8px 16px;border-radius:25px;text-decoration:none;font-size:0.85rem;font-weight:600
   }
 
+  .about{display:flex;gap:40px;align-items:center;flex-wrap:wrap;background:#fff;padding:40px;border-radius:15px}
+  .about img{width:100%;max-width:500px;border-radius:15px}
+  .about-text{flex:1}
+  .social a{color:#E1306C;text-decoration:none;font-weight:600}
+
+  .map{margin-top:50px;border-radius:15px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+
   .contact{
-    background:#333;color:#fff;text-align:center;padding:40px 20px;margin-top:50px
+    background:#222;color:#fff;text-align:center;padding:50px 20px;margin-top:50px
   }
   .contact a{color:#25D366;text-decoration:none;font-weight:600}
   
   footer{background:#111;color:#aaa;text-align:center;padding:15px;font-size:0.9rem}
+  
+  @media(max-width:768px){
+    header h1{font-size:2.5rem}
+    .nav-links{display:none}
+  }
 </style>
 </head>
 <body>
 
+<nav>
+  <span class="logo">SHAKE VILLA</span>
+  <div class="nav-links">
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
 <header>
-  <h1>SH🍹KE VILLA</h1>
-  <p>Sip The Freshness | Cold Coffee | Shakes | Mocktails</p>
+  <h1>SHAKE VILLA MURADNAGAR</h1>
+  <p>100+ Flavors | Mojito | Shakes | Coffee | Coolers</p>
+  <a href="#menu" class="btn">View Full Menu</a>
 </header>
 
-<div class="container">
-  <h2 class="section-title">Our Menu</h2>
-  <div class="menu-grid">
-    
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=600" alt="Mojito Mint">
-      <div class="menu-info">
-        <h3>Mojito Mint</h3>
-        <p>Fresh Mint, Lime & Soda</p>
-        <div class="price-row">
-          <span class="price">₹70</span>
-          <a href="https://wa.me/919808080686?text=Hi, I want to order Classic Mojito" class="order-btn" target="_blank">Order</a>
-        </div>
-      </div>
-    </div>
+<!-- MENU SECTION -->
+<div class="container" id="menu">
+  <h2 class="section-title">Our Full Menu</h2>
+  <p class="section-sub">2 Sizes Available - Small / Large</p>
 
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=600" alt="Chocolate Shake">
-      <div class="menu-info">
-        <h3>Chocolate Shake</h3>
-        <p>Thick & Creamy with Ice cream</p>
-        <div class="price-row">
-          <span class="price">₹70</span>
-          <a href="https://wa.me/919808080686?text=Hi, I want to order Chocolate Shake" class="order-btn" target="_blank">Order</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1553456558-aff11f2bdc3c?q=80&w=600" alt="Ocean Blue">
-      <div class="menu-info">
-        <h3>Ocean Blue</h3>
-        <p>Refreshing Blue Curacao Cooler</p>
-        <div class="price-row">
-          <span class="price">₹70</span>
-          <a href="https://wa.me/919808080686?text=Hi, I want to order Blue Lagoon" class="order-btn" target="_blank">Order</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=600" alt="Oreo Shake">
-      <div class="menu-info">
-        <h3>Oreo Shake</h3>
-        <p>Oreo Cookies blended with milk</p>
-        <div class="price-row">
-          <span class="price">₹70</span>
-          <a href="https://wa.me/919808080686?text=Hi, I want to order Oreo Shake" class="order-btn" target="_blank">Order</a>
-        </div>
-      </div>
-    </div>
-
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterMenu('all')">All</button>
+    <button class="filter-btn" onclick="filterMenu('mojito')">Mojito</button>
+    <button class="filter-btn" onclick="filterMenu('coffee')">Coffee</button>
+    <button class="filter-btn" onclick="filterMenu('shake')">Shakes</button>
+    <button class="filter-btn" onclick="filterMenu('premium')">Premium</button>
   </div>
-</div>
 
-<section class="contact">
-  <h2>Contact Us</h2>
-  <p>Shop No.5 Bilal Masjid Ravli Road Muradnagar, Uttar Pradesh</p>
-  <p>Call: <a href="tel:+919808080686">+91 9808080686</a> | 
-     WhatsApp: <a href="https://wa.me/919808080686">Order Now</a></p>
-  <p>Timings: 2:00 PM - 01:00 AM</p>
-</section>
+  <div class="menu-grid">
 
-<footer>
-  © 2026 Sh🍹ke Villa. All Rights Reserved.
-</footer>
+    <!-- MOJITO SECTION -->
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>OCEAN BLUE</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want OCEAN BLUE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>DOUBLE APPLE</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want DOUBLE APPLE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>MOJITO MINT</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want MOJITO MINT from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>WATER MELON</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want WATER MELON from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>GREEN APPLE MOJITO</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want GREEN APPLE MOJITO from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>BLUEBERRY MOJITO</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want BLUEBERRY MOJITO from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>LEMON ICE TEA</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want LEMON ICE TEA from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>PAAN MOJITO</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want PAAN MOJITO from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>BLUE CURACAO</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want BLUE CURACAO from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>PASSION FRUIT</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want PASSION FRUIT from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>MASALA LEMONADE</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want MASALA LEMONADE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>KIWI MOJITO</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want KIWI MOJITO from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>BLUE KHATTA</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want BLUE KHATTA from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>CRANBERRY</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want CRANBERRY from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>MIRCHI GUAVA</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want MIRCHI GUAVA from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>WATERMELON</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want WATERMELON from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>AAM PANNA</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want AAM PANNA from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>GREEN MINT</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want GREEN MINT from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>TANGO MONGO</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want TANGO MONGO from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>BLACK CURRANT</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want BLACK CURRANT from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>KALA KATTA</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want KALA KATTA from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>YUZU MOSMI</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want YUZU MOSMI from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>GRENDANIDE</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want GRENDANIDE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>IMLI BUTA</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want IMLI BUTA from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>PINE COLADA</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want PINE COLADA from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>TROPICAL TRIO</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want TROPICAL TRIO from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>SPICY LEMONADE</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want SPICY LEMONADE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>KHANA HAZAM</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want KHANA HAZAM from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>SPICY MANGO</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want SPICY MANGO from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>KHIRA</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want KHIRA from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>CHILLI GUAVA</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want CHILLI GUAVA from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>RED LADY</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want RED LADY from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>CUCUMBER MASALA</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want CUCUMBER MASALA from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="mojito"><div class="menu-info"><h3>MONIN MOJITO</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want MONIN MOJITO from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
 
-</body>
-</html>
+    <!-- COFFEE SECTION -->
+    <div class="menu-card" data-category="coffee"><div class="menu-info"><h3>COLD COFFEE</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want COLD COFFEE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="coffee"><div class="menu-info"><h3>CARAMEL COFFEE</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want CARAMEL COFFEE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="coffee"><div class="menu-info"><h3>HAZELNUT COFFEE</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want HAZELNUT COFFEE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="coffee"><div class="menu-info"><h3>BROWNIE COFFEE</h3><div class="price-row"><span class="price">₹120 / ₹140</span><a href="https://wa.me/919808080686?text=I want BROWNIE COFFEE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+
+    <!-- SHAKE SECTION -->
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>BUTTER SCOTCH</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want BUTTER SCOTCH Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>DASHERI AAM</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want DASHERI AAM Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>BLUEBERRY SHAKE</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want BLUEBERRY SHAKE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>CRUSH BLUEBERRY</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want CRUSH BLUEBERRY from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>STRAWBERRY</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want STRAWBERRY Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>CARAMEL SALTED</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want CARAMEL SALTED from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>VANILLA</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want VANILLA Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>ENGLISH TOFFEE</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want ENGLISH TOFFEE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>LITCHI</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want LITCHI Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>BELGIAN DARK CHOCOLATE</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want BELGIAN DARK CHOCOLATE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>MANGO</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want MANGO Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>KIWI</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want KIWI Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>STRAWBERRY SWIRL</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want STRAWBERRY SWIRL from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>ROSE FALUDA DRIZZLE</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want ROSE FALUDA DRIZZLE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>GREEN APPLE SHAKE</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want GREEN APPLE SHAKE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>MASALA BADAM</h3><div class="price-row"><span class="price">₹90 / ₹110</span><a href="https://wa.me/919808080686?text=I want MASALA BADAM from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>BLACK CURRANT SHAKE</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want BLACK CURRANT SHAKE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>BANANA</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want BANANA Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>MIXED FRUIT</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want MIXED FRUIT Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>GUAVA</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want GUAVA Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>PINEAPPLE</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want PINEAPPLE Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>CUSTARD</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want CUSTARD Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>CHOCO CHIPS</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want CHOCO CHIPS Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>KITKAT</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want KITKAT Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>CHOCOLATE</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want CHOCOLATE Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>THICK SHAKE</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want THICK SHAKE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>PISTA</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want PISTA Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>BADAM</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want BADAM Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>KESAR BADAM</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want KESAR BADAM from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>KESAR SYRUP</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want KESAR SYRUP from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>RASMALAI</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want RASMALAI Shake from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="shake"><div class="menu-info"><h3>DOUBLE CHOCOLATE</h3><div class="price-row"><span class="price">₹70 / ₹90</span><a href="https://wa.me/919808080686?text=I want DOUBLE CHOCOLATE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+
+    <!-- PREMIUM BROWNIE SHAKES -->
+    <div class="menu-card" data-category="premium"><div class="menu-info"><h3>DRY CHOCO BROWNIE</h3><div class="price-row"><span class="price">₹100 / ₹120</span><a href="https://wa.me/919808080686?text=I want DRY CHOCO BROWNIE from Shake Villa" class="order-btn" target="_blank">Order</a></div></div></div>
+    <div class="menu-card" data-category="premium"><div class="menu-info"><h3>PEANUT NUTELLA
