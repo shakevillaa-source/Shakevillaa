@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shake Villa - Best Mojito, Shakes & Coolers in Kiraoli. Order fresh drinks online.">
 <title>Shake Villa - Refreshing Shakes & Mojitos</title>
+
+<!-- Google Font Fix -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
 <style>
     * {
     margin: 0;
@@ -12,43 +17,57 @@
     font-family: 'Poppins', sans-serif;
   }
   
+  html {
+    scroll-behavior: smooth; /* Smooth scroll fix */
+  }
+
   body {
     background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
     color: #333;
     text-align: center;
+    overflow-x: hidden; /* Horizontal scroll hataya */
   }
 
   .hero {
-    height: 100vh;
+    min-height: 100vh; /* 100vh mobile issue fix */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background: url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=800') no-repeat center/cover;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=800') no-repeat center/cover;
   }
 
-  /* Glass effect logo */
+  /* Glass effect logo - Safari fix */
   .logo {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 10vw, 4rem); /* Mobile responsive font */
     font-weight: 800;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* iPhone fix */
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 20px 50px;
+    padding: 20px 40px;
     border-radius: 20px;
     color: #fff;
     text-shadow: 0 4px 15px rgba(0,0,0,0.2);
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     margin-bottom: 20px;
+    word-wrap: break-word; /* Lamba text toot jaye */
   }
 
   .tagline {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 4vw, 1.5rem); /* Responsive */
     color: #fff;
     margin-bottom: 30px;
     text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .btn {
@@ -61,11 +80,16 @@
     font-size: 1.1rem;
     transition: 0.3s;
     box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+    display: inline-block;
   }
   
   .btn:hover {
     background: #27ae60;
     transform: translateY(-3px);
+  }
+
+  .btn-whatsapp {
+    background: #25D366;
   }
 
   .menu {
@@ -74,7 +98,7 @@
   }
 
   .menu h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 6vw, 2.5rem);
     margin-bottom: 40px;
     color: #27ae60;
   }
@@ -84,14 +108,36 @@
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .card {
     background: #f8f8f8;
     border-radius: 15px;
-    padding: 20px;
-    width: 250px;
+    padding: 25px 20px;
+    width: 280px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px); /* Hover effect add */
+  }
+
+  .price {
+    font-weight: 600; 
+    color:#27ae60; 
+    margin-top:10px;
+    font-size: 1.2rem;
+  }
+
+  /* Footer add kiya */
+  footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    font-size: 0.9rem;
   }
 </style>
 </head>
@@ -100,12 +146,39 @@
   <section class="hero">
     <h1 class="logo">SHAKE VILLA</h1>
     <p class="tagline">Sip The Freshness 🍃 Mojito | Shakes | Coolers</p>
-    <a href="#menu" class="btn">Order Now</a>
+    <div class="btn-group">
+      <a href="#menu" class="btn">View Menu</a>
+      <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-whatsapp" target="_blank">WhatsApp Order</a>
+    </div>
   </section>
 
   <section class="menu" id="menu">
     <h2>Our Specials</h2>
     <div class="items">
+      <div class="card">
+        <h3>Classic Mojito</h3>
+        <p>Mint, Lime & Soda</p>
+        <p class="price">₹99</p>
+      </div>
+      <div class="card">
+        <h3>Chocolate Shake</h3>
+        <p>Thick & Creamy</p>
+        <p class="price">₹149</p>
+      </div>
+      <div class="card">
+        <h3>Blue Lagoon</h3>
+        <p>Refreshing & Blue</p>
+        <p class="price">₹119</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Shake Villa, Kiraoli, UP | Contact: +91 XXXXX XXXXX</p>
+  </footer>
+
+</body>
+</html>    <div class="items">
       <div class="card">
         <h3>Classic Mojito</h3>
         <p>Mint, Lime & Soda</p>
