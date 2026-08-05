@@ -79,46 +79,31 @@ header { background: #fff; display: flex; justify-content: space-between; align-
 .menu-dropdown a, .contact-dropdown a, .category-dropdown a { padding: 12px; text-align: center; color: #333; font-size: 14px; text-decoration: none; border-bottom: 1px solid #eee; }
 .menu-dropdown a:last-child, .contact-dropdown a:last-child, .category-dropdown a:last-child { border-bottom: none; }
 .menu-dropdown a:hover, .contact-dropdown a:hover, .category-dropdown a:hover { background: #e63946; color: #fff; }
-..welcome-text{
+.welcome-text{
     font-size:30px;
-    font-weight:800;
-    text-transform:uppercase;
+    font-weight:900;
     text-align:center;
-    letter-spacing:4px;
-    margin-bottom:8px;
-    white-space:nowrap;
-    overflow:hidden;
-    width:0;
     color:#FFD700;
-    border-right:3px solid #FFD700;
-    animation:
-      typing 3s steps(10,end) infinite,
-      blink .7s step-end infinite,
-      glow 2s ease-in-out infinite;
-    text-shadow:0 0 10px #FFD700,
-                0 0 20px #ff9800,
-                0 0 30px #ff9800;
+    letter-spacing:4px;
+    margin-bottom:10px;
+    text-transform:uppercase;
+    animation:zoom3d 2s ease-in-out infinite;
+    text-shadow:
+        0 2px 0 #cc9900,
+        0 4px 8px rgba(0,0,0,.35),
+        0 0 12px #FFD700,
+        0 0 25px #FFA500;
 }
 
-@keyframes typing{
-    0%{width:0;}
-    40%{width:10ch;}
-    80%{width:10ch;}
-    100%{width:0;}
-}
-@keyframes blink{
-    50%{border-color:transparent;}
-}
-
-@keyframes glow{
-    0%,100%{
-        text-shadow:0 0 10px #FFD700,
-                    0 0 20px #ff9800;
+@keyframes zoom3d{
+    0%{
+        transform:perspective(500px) rotateX(0deg) scale(1);
     }
     50%{
-        text-shadow:0 0 20px #FFD700,
-                    0 0 40px #ff9800,
-                    0 0 60px #ff5722;
+        transform:perspective(500px) rotateX(12deg) scale(1.12);
+    }
+    100%{
+        transform:perspective(500px) rotateX(0deg) scale(1);
     }
 }
 </style> 
