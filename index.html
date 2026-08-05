@@ -79,7 +79,37 @@ header { background: #fff; display: flex; justify-content: space-between; align-
 .menu-dropdown a, .contact-dropdown a, .category-dropdown a { padding: 12px; text-align: center; color: #333; font-size: 14px; text-decoration: none; border-bottom: 1px solid #eee; }
 .menu-dropdown a:last-child, .contact-dropdown a:last-child, .category-dropdown a:last-child { border-bottom: none; }
 .menu-dropdown a:hover, .contact-dropdown a:hover, .category-dropdown a:hover { background: #e63946; color: #fff; }
-</style>
+</style> 
+  .welcome-text{
+    font-size:22px;
+    font-weight:700;
+    font-family:'Poppins',sans-serif;
+    color:#ff4d4d;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+    animation:welcomeGlow 2s ease-in-out infinite;
+}
+
+@keyframes welcomeGlow{
+    0%{
+        opacity:.7;
+        transform:translateY(0) scale(1);
+        text-shadow:0 0 5px #ffb3b3;
+    }
+    50%{
+        opacity:1;
+        transform:translateY(-4px) scale(1.05);
+        text-shadow:0 0 10px #ff4d4d,
+                    0 0 20px #ff4d4d,
+                    0 0 30px #ff8080;
+    }
+    100%{
+        opacity:.7;
+        transform:translateY(0) scale(1);
+        text-shadow:0 0 5px #ffb3b3;
+    }
+}
 </head>
 <body>
 
