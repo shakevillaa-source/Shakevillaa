@@ -106,7 +106,22 @@ header { background: #fff; display: flex; justify-content: space-between; align-
     80%{width:10ch;}
     100%{width:0;}
 }
+@keyframes blink{
+    50%{border-color:transparent;}
+}
 
+@keyframes glow{
+    0%,100%{
+        text-shadow:0 0 10px #FFD700,
+                    0 0 20px #ff9800;
+    }
+    50%{
+        text-shadow:0 0 20px #FFD700,
+                    0 0 40px #ff9800,
+                    0 0 60px #ff5722;
+    }
+}
+</style> 
 </head>
 <body>
 
