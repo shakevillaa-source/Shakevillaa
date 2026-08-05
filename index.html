@@ -200,7 +200,32 @@ const catHeading=document.createElement('h4'); catHeading.textContent=cat; catHe
 cont.appendChild(catHeading);
 items.filter(i=>(lang==='hindi'?i.catHindi:i.catEnglish)===cat).forEach(item=>{
 const div=document.createElement('div'); div.className='menu-item';
-div.innerHTML=`<img src="${item.image}" onerror="this.src='${DEFAULT_IMG}'" /><h3>${lang==='hindi'?item.nameHindi:item.nameEnglish}</h3><p>${item.desc}</p><div class="price">₹${item.price}</div>`;
+div.innerHTML = `
+<img src="${item.image}" onerror="this.src='${DEFAULT_IMG}'" />
+
+<h3>${lang==='hindi'?item.nameHindi:item.nameEnglish}</h3>
+
+<p>${item.desc}</p>
+
+<div class="price">₹${item.price}</div>
+
+<a href="https://wa.me/919808080686?text=${encodeURIComponent(
+`Hello Shake Villa, I want to order: ${lang==='hindi'?item.nameHindi:item.nameEnglish}`
+)}"
+target="_blank"
+style="
+display:block;
+margin-top:8px;
+padding:10px;
+background:#25D366;
+color:#fff;
+text-align:center;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+font-size:14px;">
+🛒 Order Now
+</a>`;
 cont.appendChild(div);
 });
 });
