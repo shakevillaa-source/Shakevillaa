@@ -232,6 +232,14 @@ renderCategories(); renderMenu(allMenu);
 function renderCategories(){
 const wrapper=document.getElementById('categoryBar'); wrapper.innerHTML='';
 const cats=[...new Set(allMenu.map(i=>lang==='hindi'?i.catHindi:i.catEnglish))];
+ const order = ["Mocktail","Thick Shake","Royal Thick Shake","Coffee","Veggie Item","Chicken Item","Energy Mocktail"];
+cats.sort((a,b)=>{
+  let ai = order.indexOf(a);
+  let bi = order.indexOf(b);
+  if(ai === -1) ai = 999;
+  if(bi === -1) bi = 999;
+  return ai - bi;
+});
 ['All',...cats].forEach(cat=>{
 const span=document.createElement('span'); span.textContent=cat;
 span.onclick=()=>{document.querySelectorAll('.category-bar span').forEach(s=>s.classList.remove('active'));
