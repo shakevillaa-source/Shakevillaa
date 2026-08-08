@@ -232,18 +232,7 @@ renderCategories(); renderMenu(allMenu);
 function renderCategories(){
 const wrapper=document.getElementById('categoryBar'); wrapper.innerHTML='';
 const cats=[...new Set(allMenu.map(i=>lang==='hindi'?i.catHindi:i.catEnglish))];
-const order = [
-  "Mocktail",
-  "Thick Shake",
-  "Coffee",
-  "Royal Thick Shake",
-  "Simply Pizza",
-  "Veggie Supreme Pizza",
-  "Veggie Deluxe Pizza",
-  "Wrap",
-  "Burger",
-  "Chicken Pizza"
-];
+
 ['All',...cats].forEach(cat=>{
 const span=document.createElement('span'); span.textContent=cat;
 span.onclick=()=>{document.querySelectorAll('.category-bar span').forEach(s=>s.classList.remove('active'));
