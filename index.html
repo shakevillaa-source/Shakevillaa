@@ -256,8 +256,6 @@ dd.appendChild(a);
 function renderMenu(items,activeCategory=null){
 const cont=document.getElementById('menuContainer'); cont.innerHTML='';
 let catsToRender=[];
-if(!activeCategory || activeCategory==='All'){
-  catsToRender=[...new Set(items.map(i=>lang==='hindi'?i.catHindi:i.catEnglish))];
 
   catsToRender.sort((a,b)=>{
     let ai=order.indexOf(a);
