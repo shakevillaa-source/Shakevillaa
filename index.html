@@ -256,15 +256,9 @@ dd.appendChild(a);
 function renderMenu(items,activeCategory=null){
 const cont=document.getElementById('menuContainer'); cont.innerHTML='';
 let catsToRender=[];
+if(!activeCategory || activeCategory==='All'){
+  catsToRender=[...new Set(items.map(i=>lang==='hindi'?i.catHindi:i.catEnglish))];
 
-  catsToRender.sort((a,b)=>{
-    let ai=order.indexOf(a);
-    let bi=order.indexOf(b);
-    if(ai===-1) ai=999;
-    if(bi===-1) bi=999;
-    return ai-bi;
-  });
-}
 else{catsToRender=[activeCategory];}
 catsToRender.forEach(cat=>{
 const catHeading=document.createElement('h4'); catHeading.textContent=cat; catHeading.className='category-heading';
