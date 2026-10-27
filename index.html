@@ -1,26 +1,414 @@
-SV
-SHAKE VILLA
-100% PURE VEG • NO GST
-Table 01 0
-Good Food Good Mood
-Eat • Drink • Enjoy
-WhatsApp Direct Order • Pure Fresh Taste
-🌱 100% VEG ZERO TAX
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SHAKE VILLA | Digital Menu & Order</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: #0f172a; color: #f8fafc; padding-bottom: 110px; }
+    
+    /* Header */
+    header { position: sticky; top: 0; z-index: 50; background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(245, 158, 11, 0.3); padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .logo-badge { width: 42px; height: 42px; background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; font-weight: 900; font-size: 18px; display: flex; align-items: center; justify-content: center; border-radius: 12px; }
+    .brand-title { font-size: 18px; font-weight: 900; color: #fbbf24; letter-spacing: 0.5px; }
+    .brand-sub { font-size: 11px; font-weight: 700; color: #10b981; }
+    
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .table-pill { background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; font-size: 12px; font-weight: 800; padding: 6px 12px; border-radius: 20px; cursor: pointer; }
+    .cart-btn { background: #f59e0b; color: #000; border: none; padding: 8px 14px; border-radius: 12px; font-weight: 900; font-size: 13px; cursor: pointer; position: relative; }
+    .cart-badge { position: absolute; top: -6px; right: -6px; background: #e11d48; color: white; font-size: 10px; font-weight: 900; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #0f172a; }
 
+    /* Banner */
+    .banner { margin: 12px 16px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 16px; padding: 14px 16px; color: #0f172a; display: flex; justify-content: space-between; align-items: center; }
+    .banner h2 { font-size: 16px; font-weight: 900; }
+    .banner p { font-size: 11px; font-weight: 700; margin-top: 2px; }
+    .veg-tag { background: #0f172a; color: #10b981; font-size: 11px; font-weight: 800; padding: 5px 10px; border-radius: 8px; border: 1px solid #10b981; }
 
+    /* Search & Filter */
+    .controls { position: sticky; top: 66px; z-index: 40; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); padding: 8px 16px 12px 16px; }
+    .search-input { width: 100%; padding: 10px 14px; border-radius: 12px; background: #1e293b; border: 1px solid #334155; color: #fff; font-size: 13px; outline: none; }
+    .search-input:focus { border-color: #f59e0b; }
+    
+    .category-scroll { display: flex; gap: 8px; overflow-x: auto; padding-top: 10px; scrollbar-width: none; }
+    .category-scroll::-webkit-scrollbar { display: none; }
+    .cat-btn { white-space: nowrap; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; background: #1e293b; color: #cbd5e1; border: 1px solid #334155; cursor: pointer; }
+    .cat-btn.active { background: #fbbf24; color: #0f172a; border-color: #fbbf24; font-weight: 900; }
 
-0 Items in Cart
-₹0 (Zero GST)
-View Order
-Select Your Table
-Choose where you are seated
+    /* Menu Grid / Items */
+    .menu-container { padding: 0 16px; display: flex; flex-direction: column; gap: 12px; }
+    .item-card { background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 12px; display: flex; gap: 12px; }
+    .item-img-box { position: relative; width: 95px; height: 95px; border-radius: 12px; overflow: hidden; flex-shrink: 0; background: #334155; }
+    .item-img-box img { width: 100%; height: 100%; object-fit: cover; }
+    .veg-dot { position: absolute; top: 6px; left: 6px; width: 16px; height: 16px; background: #fff; border-radius: 4px; display: flex; align-items: center; justify-content: center; }
+    .veg-dot span { width: 8px; height: 8px; background: #10b981; border-radius: 50%; }
 
-🥡 Takeaway / Parcel Done
-Your Order Table 01
-Review selected food items
+    .item-info { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .item-name { font-size: 14px; font-weight: 800; color: #fff; line-height: 1.2; }
+    .item-desc { font-size: 11px; color: #94a3b8; margin-top: 3px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-Special Cooking Note (Optional):
-Item Subtotal: ₹0
-GST / Extra Taxes: ₹0 (Zero GST / No Tax)
-Grand Total: ₹0
-ORDER VIA WHATSAPP (9808080686) Send to Alt Number (8171201999)
+    .item-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; flex-wrap: wrap; gap: 6px; }
+    .single-price { font-size: 16px; font-weight: 900; color: #fbbf24; }
+    .add-btn { background: #f59e0b; color: #0f172a; border: none; padding: 6px 14px; border-radius: 8px; font-weight: 800; font-size: 12px; cursor: pointer; }
+    
+    .size-group { display: flex; gap: 4px; background: #0f172a; padding: 3px; border-radius: 8px; border: 1px solid #334155; }
+    .size-btn { background: transparent; border: none; color: #f8fafc; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px; cursor: pointer; }
+    .size-btn:hover, .size-btn:active { background: #f59e0b; color: #000; }
+
+    /* Sticky Bottom Cart Bar */
+    .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(15, 23, 42, 0.98); border-top: 1px solid #334155; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; z-index: 45; }
+    .bottom-bar.hidden { display: none; }
+    .bar-total { font-size: 18px; font-weight: 900; color: #fbbf24; }
+    .bar-items { font-size: 11px; color: #94a3b8; }
+    .view-cart-btn { background: #f59e0b; color: #000; border: none; padding: 10px 20px; border-radius: 12px; font-weight: 900; font-size: 13px; cursor: pointer; }
+
+    /* Drawer / Modal */
+    .drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 100; display: flex; justify-content: flex-end; }
+    .drawer-overlay.hidden { display: none; }
+    .drawer-content { width: 100%; max-width: 400px; background: #0f172a; height: 100%; display: flex; flex-direction: column; }
+    .drawer-header { padding: 16px; border-bottom: 1px solid #334155; display: flex; justify-content: space-between; align-items: center; background: #090d16; }
+    .drawer-items { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+    
+    .cart-row { background: #1e293b; padding: 10px 12px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #334155; }
+    .qty-box { display: flex; align-items: center; gap: 8px; background: #0f172a; padding: 4px 8px; border-radius: 8px; }
+    .qty-btn { background: none; border: none; color: #fbbf24; font-size: 16px; font-weight: 900; cursor: pointer; padding: 0 4px; }
+    
+    .drawer-footer { padding: 16px; border-top: 1px solid #334155; background: #090d16; }
+    .bill-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; color: #cbd5e1; }
+    .bill-row.total { font-size: 17px; font-weight: 900; color: #fbbf24; border-top: 1px solid #334155; padding-top: 8px; margin-top: 8px; }
+
+    .wa-btn { width: 100%; padding: 12px; border: none; border-radius: 12px; font-weight: 900; font-size: 13px; cursor: pointer; margin-top: 6px; display: flex; justify-content: center; align-items: center; gap: 6px; }
+    .wa-btn-pri { background: #10b981; color: #000; }
+    .wa-btn-sec { background: #1e293b; color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+    /* Modal for Table Selection */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 110; display: flex; align-items: center; justify-content: center; padding: 16px; }
+    .modal-overlay.hidden { display: none; }
+    .modal-box { background: #0f172a; border: 1px solid #334155; border-radius: 16px; width: 100%; max-width: 340px; padding: 16px; }
+    .table-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 14px 0; }
+    .t-btn { background: #1e293b; border: 1px solid #334155; color: #fff; padding: 10px; border-radius: 8px; font-weight: 800; font-size: 12px; cursor: pointer; }
+    .t-btn.active { background: #fbbf24; color: #000; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <div class="logo-badge">SV</div>
+      <div>
+        <div class="brand-title">SHAKE VILLA</div>
+        <div class="brand-sub">100% PURE VEG &bull; NO GST</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="table-pill" onclick="openTableModal()" id="topTableLabel">📍 Table 01</div>
+      <button class="cart-btn" onclick="toggleCart()">
+        Cart 🛒
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div>
+      <span style="font-size: 10px; font-weight: 900; background: #0f172a; color: #fbbf24; padding: 2px 6px; border-radius: 4px;">GOOD FOOD GOOD MOOD</span>
+      <h2>Eat &bull; Drink &bull; Enjoy</h2>
+      <p>Direct WhatsApp Order &bull; Zero Extra Tax</p>
+    </div>
+    <div class="veg-tag">🌱 100% VEG</div>
+  </div>
+
+  <!-- SEARCH & CATEGORIES -->
+  <div class="controls">
+    <input type="text" id="searchInput" class="search-input" oninput="renderMenu()" placeholder="Search Burger, Pizza, Shake, Cold Coffee...">
+    <div class="category-scroll" id="catScroll"></div>
+  </div>
+
+  <!-- MENU LIST -->
+  <div class="menu-container" id="menuList"></div>
+
+  <!-- STICKY BOTTOM BAR -->
+  <div class="bottom-bar hidden" id="bottomBar">
+    <div>
+      <div class="bar-items"><span id="bItems">0</span> items selected</div>
+      <div class="bar-total">₹<span id="bTotal">0</span> <span style="font-size: 10px; color: #10b981; font-weight: 700;">(No GST)</span></div>
+    </div>
+    <button class="view-cart-btn" onclick="toggleCart()">View Cart ➔</button>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div class="drawer-overlay hidden" id="cartDrawer">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div>
+          <h3 style="color: #fff; font-size: 16px; font-weight: 900;">Your Cart</h3>
+          <span style="color: #fbbf24; font-size: 11px; font-weight: 700;" id="drawerTableLabel">Table 01</span>
+        </div>
+        <button onclick="toggleCart()" style="background: none; border: none; color: #94a3b8; font-size: 24px; cursor: pointer;">&times;</button>
+      </div>
+
+      <div class="drawer-items" id="drawerItems"></div>
+
+      <div style="padding: 12px 16px; background: #090d16; border-top: 1px solid #334155;">
+        <label style="font-size: 11px; color: #94a3b8; font-weight: 700; display: block; margin-bottom: 4px;">Kitchen Instructions (Optional):</label>
+        <input type="text" id="orderNote" placeholder="e.g. Extra spicy, less sweet, no onion..." style="width: 100%; padding: 8px 10px; border-radius: 8px; background: #1e293b; border: 1px solid #334155; color: #fff; font-size: 12px;">
+      </div>
+
+      <div class="drawer-footer">
+        <div class="bill-row">
+          <span>Subtotal:</span>
+          <span style="font-weight: 800; color: #fff;">₹<span id="cartSubtotal">0</span></span>
+        </div>
+        <div class="bill-row" style="color: #10b981;">
+          <span>GST / Extra Charges:</span>
+          <span>₹0 (Zero GST)</span>
+        </div>
+        <div class="bill-row total">
+          <span>Total Pay:</span>
+          <span>₹<span id="cartTotal">0</span></span>
+        </div>
+
+        <button class="wa-btn wa-btn-pri" onclick="sendOrder('919808080686')">
+          📱 ORDER ON WHATSAPP (9808080686)
+        </button>
+        <button class="wa-btn wa-btn-sec" onclick="sendOrder('918171201999')">
+          Send to Alt Number (8171201999)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLE MODAL -->
+  <div class="modal-overlay hidden" id="tableModal">
+    <div class="modal-box">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="font-size: 15px; font-weight: 900; color: #fff;">Select Your Table</h3>
+        <button onclick="closeTableModal()" style="background: none; border: none; color: #94a3b8; font-size: 20px; cursor: pointer;">&times;</button>
+      </div>
+      <div class="table-grid" id="tGrid"></div>
+      <div style="display: flex; gap: 8px;">
+        <button onclick="setTable('Parcel')" style="flex: 1; padding: 10px; background: #1e293b; color: #fbbf24; border: 1px solid #334155; border-radius: 8px; font-weight: 800; font-size: 11px; cursor: pointer;">🥡 Takeaway / Parcel</button>
+        <button onclick="closeTableModal()" style="flex: 1; padding: 10px; background: #f59e0b; color: #000; border: none; border-radius: 8px; font-weight: 900; font-size: 11px; cursor: pointer;">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    let selectedTable = urlParams.get('table') || '01';
+    if (selectedTable !== 'Parcel' && selectedTable.length === 1) selectedTable = '0' + selectedTable;
+
+    function updateTable() {
+      const text = selectedTable === 'Parcel' ? '🥡 Takeaway' : '📍 Table ' + selectedTable;
+      document.getElementById('topTableLabel').innerText = text;
+      document.getElementById('drawerTableLabel').innerText = selectedTable === 'Parcel' ? 'Takeaway / Parcel' : 'Table ' + selectedTable;
+    }
+    updateTable();
+
+    function openTableModal() {
+      const grid = document.getElementById('tGrid');
+      let html = '';
+      for (let i = 1; i <= 16; i++) {
+        const num = i < 10 ? '0' + i : '' + i;
+        html += `<button class="t-btn ${selectedTable === num ? 'active' : ''}" onclick="setTable('${num}')">T-${num}</button>`;
+      }
+      grid.innerHTML = html;
+      document.getElementById('tableModal').classList.remove('hidden');
+    }
+    function closeTableModal() { document.getElementById('tableModal').classList.add('hidden'); }
+    function setTable(num) { selectedTable = num; updateTable(); closeTableModal(); }
+
+    const menu = [
+      // BURGERS
+      { id: 1, name: "Veg Burger", cat: "Burgers", price: 49, desc: "Crispy vegetable patty burger with fresh lettuce", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&auto=format&fit=crop&q=60" },
+      { id: 2, name: "Veg Cheese Burger", cat: "Burgers", price: 59, desc: "Classic veg patty with melted cheese slice", img: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&auto=format&fit=crop&q=60" },
+      { id: 3, name: "Veg Double Tikki Burger", cat: "Burgers", price: 89, desc: "Double crisp tikki layered with sauces", img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=400&auto=format&fit=crop&q=60" },
+      { id: 4, name: "Veg Double Tikki Double Cheese Burger", cat: "Burgers", price: 139, desc: "Loaded double patty & double cheese layer", img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&auto=format&fit=crop&q=60" },
+      { id: 5, name: "Paneer Burger", cat: "Burgers", price: 99, desc: "Spiced grilled paneer patty in soft bun", img: "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=400&auto=format&fit=crop&q=60" },
+      { id: 6, name: "Paneer Cheese Burger", cat: "Burgers", price: 119, desc: "Grilled paneer patty topped with rich cheese", img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=400&auto=format&fit=crop&q=60" },
+
+      // PIZZAS
+      { id: 7, name: "Vegetarian Bite Pizza", cat: "Pizzas", prices: { S: 79, M: 129, L: 219 }, desc: "Onion, Capsicum, Tomato With Cheese", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&auto=format&fit=crop&q=60" },
+      { id: 8, name: "Cheese & Corn Pizza", cat: "Pizzas", prices: { S: 119, M: 199, L: 349 }, desc: "Mozzarella Cheese With Sweet Corn", img: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&auto=format&fit=crop&q=60" },
+      { id: 9, name: "Paneer Pizza", cat: "Pizzas", prices: { S: 119, M: 199, L: 349 }, desc: "Onion, Capsicum, Tomato & Fresh Paneer", img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&auto=format&fit=crop&q=60" },
+      { id: 10, name: "Farmer Paradise Pizza", cat: "Pizzas", prices: { S: 149, M: 219, L: 389 }, desc: "Black Olives, Jalapenos, Onion, Capsicum, Tomato, Paneer", img: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&auto=format&fit=crop&q=60" },
+      { id: 11, name: "King Corn Pizza Spl.", cat: "Pizzas", prices: { S: 199, M: 289, L: 429 }, desc: "Makhai Paneer, Onion, Capsicum, Red Paprika", img: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=400&auto=format&fit=crop&q=60" },
+
+      // SANDWICHES & WRAPS
+      { id: 12, name: "Veg Sandwich", cat: "Sandwiches & Wraps", price: 59, desc: "Fresh vegetable grilled sandwich", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&auto=format&fit=crop&q=60" },
+      { id: 13, name: "Veg Cheese Sandwich", cat: "Sandwiches & Wraps", price: 79, desc: "Layered fresh vegetables with melted cheese", img: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&auto=format&fit=crop&q=60" },
+      { id: 14, name: "Paneer Sandwich", cat: "Sandwiches & Wraps", price: 89, desc: "Spiced marinated paneer grilled toast", img: "https://images.unsplash.com/photo-1628191010210-a59de33e5941?w=400&auto=format&fit=crop&q=60" },
+      { id: 15, name: "Paneer Cheese Sandwich", cat: "Sandwiches & Wraps", price: 109, desc: "Rich paneer with generous gooey cheese", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&auto=format&fit=crop&q=60" },
+      { id: 16, name: "Veg Wrap", cat: "Sandwiches & Wraps", price: 79, desc: "Crisp vegetables rolled in warm tortilla", img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&auto=format&fit=crop&q=60" },
+      { id: 17, name: "Paneer Wrap", cat: "Sandwiches & Wraps", price: 99, desc: "Tandoori paneer rolled with spicy mint mayo", img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&auto=format&fit=crop&q=60" },
+
+      // ROLLS & FRIES
+      { id: 18, name: "Paneer Roll", cat: "Rolls & Fries", price: 69, desc: "Crispy roll loaded with savory paneer", img: "https://images.unsplash.com/photo-1606471191009-63994c53433b?w=400&auto=format&fit=crop&q=60" },
+      { id: 19, name: "Paneer Cheese Roll", cat: "Rolls & Fries", price: 69, desc: "Paneer filling topped with rich cheese", img: "https://images.unsplash.com/photo-1606471191009-63994c53433b?w=400&auto=format&fit=crop&q=60" },
+      { id: 20, name: "French Fries", cat: "Rolls & Fries", price: 59, desc: "Classic golden crisp salted french fries", img: "https://images.unsplash.com/photo-1576107232684-1279f3908594?w=400&auto=format&fit=crop&q=60" },
+      { id: 21, name: "Peri Peri French Fries", cat: "Rolls & Fries", price: 69, desc: "Crispy fries dusted with fiery peri peri masala", img: "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=400&auto=format&fit=crop&q=60" },
+
+      // THICK SHAKES
+      { id: 22, name: "Butter Scotch Shake", cat: "Thick Shakes", prices: { S: 70, L: 90 }, desc: "Creamy butterscotch flavored thick shake", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop&q=60" },
+      { id: 23, name: "Blueberry Shake", cat: "Thick Shakes", prices: { S: 70, L: 90 }, desc: "Wild blueberry blended milkshake", img: "https://images.unsplash.com/photo-1553787499-6f9133860278?w=400&auto=format&fit=crop&q=60" },
+      { id: 24, name: "Strawberry Shake", cat: "Thick Shakes", prices: { S: 70, L: 90 }, desc: "Fresh sweet strawberry thick shake", img: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=400&auto=format&fit=crop&q=60" },
+      { id: 25, name: "Vanilla Shake", cat: "Thick Shakes", prices: { S: 70, L: 90 }, desc: "Classic sweet vanilla bean milkshake", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop&q=60" },
+      { id: 26, name: "Mango Shake", cat: "Thick Shakes", prices: { S: 70, L: 90 }, desc: "Alphonso mango pulp blended shake", img: "https://images.unsplash.com/photo-1546173159-315724a31696?w=400&auto=format&fit=crop&q=60" },
+      { id: 27, name: "Belgian Dark Chocolate", cat: "Thick Shakes", prices: { S: 90, L: 110 }, desc: "Intense 70% dark Belgian cocoa thick shake", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop&q=60" },
+      { id: 28, name: "Kitkat Brownie Shake", cat: "Thick Shakes", prices: { S: 140, L: 120 }, desc: "Fudgy brownie blended with kitkat crunch", img: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=400&auto=format&fit=crop&q=60" },
+      { id: 29, name: "Oreo Brownie Shake", cat: "Thick Shakes", prices: { S: 140, L: 120 }, desc: "Oreo biscuits with rich chocolate brownie", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop&q=60" },
+      { id: 30, name: "Shakevilla Premium", cat: "Thick Shakes", prices: { S: 160, L: 180 }, desc: "Signature shake with dry fruits, brownie & cream", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop&q=60" },
+      { id: 31, name: "Rasmalai Shake", cat: "Thick Shakes", prices: { S: 70, L: 90 }, desc: "Traditional royal rasmalai saffron shake", img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&auto=format&fit=crop&q=60" },
+      { id: 32, name: "Kesar Badam Shake", cat: "Thick Shakes", prices: { S: 70, L: 90 }, desc: "Almonds & fragrant saffron infused shake", img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&auto=format&fit=crop&q=60" },
+
+      // MOCKTAILS & COFFEE
+      { id: 33, name: "Ocean Blue Mocktail", cat: "Mocktails & Coffee", prices: { S: 70, L: 90 }, desc: "Chilled curacao with tangy lime fizz", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=60" },
+      { id: 34, name: "Mojito Mint", cat: "Mocktails & Coffee", prices: { S: 70, L: 90 }, desc: "Classic fresh garden mint & lemon cooler", img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&auto=format&fit=crop&q=60" },
+      { id: 35, name: "Kala Khatta Mocktail", cat: "Mocktails & Coffee", prices: { S: 70, L: 90 }, desc: "Desi chatpata tangy kala khatta cooler", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=60" },
+      { id: 36, name: "Cold Coffee", cat: "Mocktails & Coffee", prices: { S: 70, L: 90 }, desc: "Chilled blended creamy coffee", img: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=400&auto=format&fit=crop&q=60" },
+      { id: 37, name: "Caramel Coffee", cat: "Mocktails & Coffee", prices: { S: 90, L: 110 }, desc: "Rich salted caramel infused cold coffee", img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&auto=format&fit=crop&q=60" },
+      { id: 38, name: "Brownie Coffee", cat: "Mocktails & Coffee", prices: { S: 120, L: 140 }, desc: "Cold coffee blended with chocolate brownie", img: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=400&auto=format&fit=crop&q=60" }
+    ];
+
+    let currentCat = 'All';
+    let cart = [];
+
+    const categories = ['All', 'Burgers', 'Pizzas', 'Sandwiches & Wraps', 'Rolls & Fries', 'Thick Shakes', 'Mocktails & Coffee'];
+    function renderCats() {
+      document.getElementById('catScroll').innerHTML = categories.map(c => `
+        <button class="cat-btn ${currentCat === c ? 'active' : ''}" onclick="setCat('${c}')">${c}</button>
+      `).join('');
+    }
+    function setCat(c) { currentCat = c; renderCats(); renderMenu(); }
+
+    function renderMenu() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const list = document.getElementById('menuList');
+      const filtered = menu.filter(item => {
+        return (currentCat === 'All' || item.cat === currentCat) &&
+               (item.name.toLowerCase().includes(search) || item.desc.toLowerCase().includes(search));
+      });
+
+      list.innerHTML = filtered.map(item => {
+        const hasVar = !!item.prices;
+        return `
+          <div class="item-card">
+            <div class="item-img-box">
+              <img src="${item.img}" alt="${item.name}">
+              <div class="veg-dot"><span></span></div>
+            </div>
+            <div class="item-info">
+              <div>
+                <div class="item-name">${item.name}</div>
+                <div class="item-desc">${item.desc}</div>
+              </div>
+              <div class="item-bottom">
+                ${hasVar ? `
+                  <div class="size-group">
+                    ${Object.keys(item.prices).map(sz => `
+                      <button class="size-btn" onclick="addToCart(${item.id}, '${sz}', ${item.prices[sz]})">${sz}: ₹${item.prices[sz]}</button>
+                    `).join('')}
+                  </div>
+                ` : `
+                  <div class="single-price">₹${item.price}</div>
+                  <button class="add-btn" onclick="addToCart(${item.id}, '', ${item.price})">+ Add</button>
+                `}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function addToCart(id, variant, price) {
+      const item = menu.find(m => m.id === id);
+      const exist = cart.find(c => c.id === id && c.variant === variant);
+      if (exist) { exist.qty++; }
+      else { cart.push({ id, name: item.name, variant, price, qty: 1 }); }
+      updateCart();
+    }
+
+    function changeQty(idx, delta) {
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) cart.splice(idx, 1);
+      updateCart();
+    }
+
+    function updateCart() {
+      const count = cart.reduce((s, i) => s + i.qty, 0);
+      const total = cart.reduce((s, i) => s + (i.price * i.qty), 0);
+
+      document.getElementById('cartBadge').innerText = count;
+      document.getElementById('bItems').innerText = count;
+      document.getElementById('bTotal').innerText = total;
+      document.getElementById('cartSubtotal').innerText = total;
+      document.getElementById('cartTotal').innerText = total;
+
+      const bar = document.getElementById('bottomBar');
+      if (count > 0) bar.classList.remove('hidden');
+      else bar.classList.add('hidden');
+
+      const drawerItems = document.getElementById('drawerItems');
+      if (cart.length === 0) {
+        drawerItems.innerHTML = `<div style="text-align: center; color: #94a3b8; padding: 40px 0; font-size: 13px;">Cart is empty! Add items from menu.</div>`;
+      } else {
+        drawerItems.innerHTML = cart.map((item, idx) => `
+          <div class="cart-row">
+            <div>
+              <div style="font-weight: 800; font-size: 13px; color: #fff;">${item.name} ${item.variant ? `<span style="color: #fbbf24;">(${item.variant})</span>` : ''}</div>
+              <div style="font-size: 11px; color: #fbbf24;">₹${item.price} each</div>
+            </div>
+            <div class="qty-box">
+              <button class="qty-btn" onclick="changeQty(${idx}, -1)">-</button>
+              <span style="font-size: 12px; font-weight: 800; color: #fff; width: 18px; text-align: center;">${item.qty}</span>
+              <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function toggleCart() {
+      document.getElementById('cartDrawer').classList.toggle('hidden');
+    }
+
+    function sendOrder(phone) {
+      if (cart.length === 0) { alert("Pehle items cart me add kijiye!"); return; }
+      const total = cart.reduce((s, i) => s + (i.price * i.qty), 0);
+      const note = document.getElementById('orderNote').value.trim();
+
+      let msg = `*NEW ORDER - SHAKE VILLA*%0A`;
+      msg += `--------------------------------%0A`;
+      msg += `📍 *${selectedTable === 'Parcel' ? 'TAKEAWAY / PARCEL' : 'TABLE: ' + selectedTable}*%0A`;
+      msg += `🕒 *Time:* ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}%0A`;
+      msg += `--------------------------------%0A`;
+      msg += `*ORDER ITEMS:*%0A`;
+
+      cart.forEach((item, i) => {
+        const v = item.variant ? ` [${item.variant}]` : '';
+        msg += `${i+1}. ${item.name}${v} x ${item.qty} = ₹${item.price * item.qty}%0A`;
+      });
+
+      msg += `--------------------------------%0A`;
+      msg += `*Subtotal:* ₹${total}%0A`;
+      msg += `*GST (0%):* ₹0 (Zero GST)%0A`;
+      msg += `*TOTAL BILL:* ₹${total}%0A`;
+
+      if (note) {
+        msg += `--------------------------------%0A`;
+        msg += `📝 *Note:* ${encodeURIComponent(note)}%0A`;
+      }
+      msg += `--------------------------------%0A`;
+      msg += `Please prepare my order quickly!`;
+
+      window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+    }
+
+    renderCats();
+    renderMenu();
+  </script>
+</body>
+</html>
